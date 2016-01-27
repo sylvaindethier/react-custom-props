@@ -7,8 +7,8 @@
     "test": "NODE_ENV=test mocha --compilers js:babel-core/register --recursive ./lib/test",
     "clean": "rimraf dist/*",
     "prebuild": "npm run test && npm run clean",
-    "build": "NODE_ENV=production webpack --colors --progress",
-    "watch": "npm run clean && NODE_ENV=dev webpack --colors --progress --watch",
+    "build": "NODE_ENV=production webpack -p --colors --progress",
+    "watch": "npm run clean && NODE_ENV=dev webpack -d --colors --progress --watch",
     "deploy": "git push origin master"
   },
   "repository": {
