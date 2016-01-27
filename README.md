@@ -3,7 +3,10 @@
 
 > Configurable props for React components / elements.
 
-Add configurable props or HTML attributes to React components, or any HTML elements
+Add configurable props or HTML attributes to React components, or any HTML elements.
+
+View the [JSbin demo](https://jsbin.com/najuju/)
+
 
 ## Use case: Design a fully configurable component
 
