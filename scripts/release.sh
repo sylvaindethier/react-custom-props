@@ -20,7 +20,7 @@ version=$(npm version $update_type)
 
 ## process git
 git commit --allow-empty -am "Version $version"
-git tag $version
+#git tag $version
 git push origin master
 git push origin $version
 
