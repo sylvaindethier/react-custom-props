@@ -3,7 +3,7 @@ import { resolve } from 'path';
 
 const srcPath = resolve(__dirname, 'lib');
 const distPath = resolve(__dirname, 'dist');
-const library = 'ReactOptsProps';
+const library = 'ReactConfProps';
 
 function isPROD(env) {
   return env === undefined || env === 'prod' || env === 'production';
@@ -32,11 +32,13 @@ function getPlugins(env) {
       plugins.push(new webpack.optimize.UglifyJsPlugin({ minimize: true, sourceMap: true }));
       break;
     case isDEV(env):
-      plugins.push(new webpack.NoErrorsPlugin());
       break;
     default:
       break;
   }
+
+  // no errors
+  plugins.push(new webpack.NoErrorsPlugin());
 
   return plugins;
 }

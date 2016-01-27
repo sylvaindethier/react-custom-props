@@ -1,16 +1,16 @@
 import expect from 'expect';
-import opts, { PropTypesOpts, ComponentOpts } from '../../ReactOptsProps';
+import conf, {PropTypesConf, ComponentConf} from '../../ReactConfProps';
 
 describe('module', () => {
-  it('should expose a default function (opts)', () => {
-    expect(opts).toBeA('function');
+  it('should expose a default function (conf)', () => {
+    expect(conf).toBeA('function');
   });
 
   it('should expose a "PropTypesOpts" property', () => {
-    expect(PropTypesOpts).toNotBe(undefined);
+    expect(PropTypesConf).toNotBe(undefined);
   });
 
   it('should expose a "ComponentOpts" property', () => {
-    expect(ComponentOpts).toNotBe(undefined);
+    expect(ComponentConf).toNotBe(undefined);
   });
 });

@@ -1,7 +1,7 @@
 .babelrc
 .eslint*
 .travis.yml
-scripts
 webpack*
+scripts
 lib/test
 dist/test

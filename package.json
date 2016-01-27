@@ -1,8 +1,8 @@
 {
-  "name": "react-optsprops",
+  "name": "react-confprops",
   "version": "0.1.1",
   "description": "Configurable props for React components",
-  "main": "react-optsprops.js",
+  "main": "react-confprops.js",
   "scripts": {
     "test": "NODE_ENV=test mocha --compilers js:babel-core/register --recursive ./lib/test",
     "test:dist:es6": "NODE_ENV=test mocha --compilers js:babel-core/register --recursive ./dist/test/es6",
@@ -16,11 +16,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sylvaindethier/react-optsprops.git"
+    "url": "https://github.com/sylvaindethier/react-confprops.git"
   },
   "keywords": [
-    "react-optsprops",
-    "ReactOptsProps",
+    "react-confprops",
+    "ReactConfProps",
     "configurable",
     "react",
     "component",
@@ -29,9 +29,9 @@
   "author": "Sylvain Dethier",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sylvaindethier/react-optsprops/issues"
+    "url": "https://github.com/sylvaindethier/react-confprops/issues"
   },
-  "homepage": "https://github.com/sylvaindethier/react-optsprops#readme",
+  "homepage": "https://github.com/sylvaindethier/react-confprops#readme",
   "dependencies": {
     "react": "^0.14.6"
   },

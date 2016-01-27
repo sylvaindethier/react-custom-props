@@ -1,24 +1,24 @@
-# react-optsprops
-[![Build Status](https://travis-ci.org/sylvaindethier/react-optsprops.svg?branch=master)](https://travis-ci.org/sylvaindethier/react-optsprops)
+# ReactConfProps
+[![Build Status](https://travis-ci.org/sylvaindethier/react-confprops.svg?branch=master)](https://travis-ci.org/sylvaindethier/react-confprops)
 
-> Configurable props for React components.
+> Configurable props for React components / elements.
 
-Add configurable props or HTML attributes to React (any ?) element / component.
+Add configurable props or HTML attributes to React components, or any HTML elements
 
 ## Use case: Design a fully configurable component
 
   * With stateless function
 ```jsx
 import React, {PropTypes} from 'react';
-import opts, {PropTypesOpts} from 'react-opts';
+import conf, {PropTypesConf} from 'react-confprops';
 
 export default function HelloWorld(props) {
   return (
     // inject root optional props
-    <h1 {...opts(props)}>
+    <h1 {...conf(props)}>
       Hello
       // inject named child optional props
-      <span {...opts(props, 'span_whatEverTheName')}>
+      <span {...conf(props, 'whatEverTheName')}>
         {props.name}
       </span> !
     </h1>
@@ -29,23 +29,23 @@ HelloWorld.propTypes = {
   name: PropTypes.string.isRequired,
 
   // add optional props (not required)
-  opts: PropTypesOpts
+  conf: PropTypesConf
 };
 ```
 
-  * With ES6 `ComponentOpts` class
+  * With ES6 `ComponentConf` class
 ```jsx
 import React, {PropTypes} from 'react';
-import {ComponentOpts} from 'react-opts';
+import {ComponentConf} from 'react-confprops';
 
-class HelloWorld extends ComponentOpts {
+class HelloWorld extends ComponentConf {
   render() {
     return (
       // inject root optional props
-      <h1 {...this.opts()}>
+      <h1 {...this.conf()}>
         Hello
         // inject indexed child optional props
-        <span {...this.opts(0)}>
+        <span {...this.conf(0)}>
           {props.name}
         </span> !
       </h1>
@@ -61,16 +61,16 @@ HelloWorld.propTypes = {
   * Or with ES6 React `Component` class
 ```jsx
 import React, {PropTypes, Component} from 'react';
-import opts, {PropTypesOpts} from 'react-opts';
+import conf, {PropTypesOpts} from 'react-confprops';
 
 class HelloWorld extends Component {
   render() {
     return (
-      // inject root optional props
-      <h1 {...opts(this.props)}>
+      // inject conf props
+      <h1 {...conf(this.props)}>
         Hello
         // inject named child optional props
-        <span {...opts(this.props, 'span_whatEverTheName')}>
+        <span {...conf(this.props, 'whatEverTheName')}>
           {props.name}
         </span> !
       </h1>
@@ -80,7 +80,7 @@ class HelloWorld extends Component {
 
 HelloWorld.propTypes = {
   name: PropTypes.string.isRequired,
-  opts: PropTypesOpts
+  opts: PropTypesConf
 };
 ```
 
@@ -89,47 +89,47 @@ HelloWorld.propTypes = {
 
 The configurable HelloWorld component has:
   - a required `name` props
-  - an optional `opts` props
+  - an optional `conf` props
 
-Use with no `opts` props (trivial).
+Use with no `conf` props (trivial).
 ```jsx
 const node = (
   <HelloWorld name="foo" />
 );
 ```
 
-Use with `opts` simple root props
+Use with `conf` simple props
 ```jsx
-const opts = {
-  // optional root props can be a value
+const conf = {
+  // optional conf props can be a value
   className: 'hello-world'
 }
 const node = (
-  <HelloWorld name="foo" opts={opts} />
+  <HelloWorld name="foo" conf={conf} />
 );
 
 // or if you prefer
-const HelloWorldOpts = { opts: {
+const HelloWorldConf = { conf: {
   className: 'hello-world'
 }};
-const node_ = (
-  <HelloWorld name="foo" {...HelloWorldOpts} />
+const node = (
+  <HelloWorld name="foo" {...HelloWorldConf} />
 );
 ```
 
-Use with `opts` callback root props
+Use with `conf` callback props
 ```jsx
-const HelloWorldOpts = { opts: {
-  // optional root props can be a callback
+const HelloWorldConf = { conf: {
+  // optional conf props can be a callback
   className: (props, state) => ('hello-world')
 }};
 ```
 
-Use with `opts.childrenOpts` array (indexed `opts`)
+Use with `conf.conf` array (indexed child `conf`)
 ```jsx
-const HelloWorldOpts = { opts: {
-  // optional 'childrenOpts' props can be an array
-  childrenOpts: [
+const HelloWorldConf = { conf: {
+  // optional child conf props can be an array
+  conf: [
     {
       style: {backgroundColor: 'yellow'}
     }
@@ -137,11 +137,11 @@ const HelloWorldOpts = { opts: {
 }};
 ```
 
-Use with `opts.childrenOpts` object (named `opts`)
+Use with `conf.conf` object (named child `conf`)
 ```jsx
-const HelloWorldOpts = { opts: {
-  // optional 'childrenOpts' props can be an object
-  childrenOpts: {
+const HelloWorldConf = { conf: {
+  // optional child conf props can be an object
+  conf: {
     span: {
       style: {backgroundColor: 'yellow'}
     }
