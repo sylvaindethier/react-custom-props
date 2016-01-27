@@ -1,0 +1,7 @@
+.babelrc
+.eslint*
+.travis.yml
+scripts
+webpack*
+lib/test
+dist/test

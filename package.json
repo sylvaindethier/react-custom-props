@@ -12,7 +12,7 @@
     "build": "NODE_ENV=production webpack -p --colors --progress",
     "postbuild": "npm run test:dist:es6 && npm run test:dist:es5",
     "watch": "npm run clean && NODE_ENV=dev webpack -d --colors --progress --watch",
-    "deploy": "git push origin master"
+    "release": "./scripts/release.sh",
   },
   "repository": {
     "type": "git",
