@@ -1,6 +1,6 @@
 {
   "name": "react-optsprops",
-  "version": "0.0.5",
+  "version": "0.0.3",
   "description": "Configurable props for React components",
   "main": "react-optsprops.js",
   "scripts": {
