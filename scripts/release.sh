@@ -16,6 +16,7 @@ printf "Update type (current version is $current_version)? "
 read update_type
 
 ## commit unstaged changes
+git add --all
 git commit --allow-empty -am "Update $update_type from $current_version"
 ## update package version
 version=$(npm version $update_type)
