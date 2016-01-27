@@ -3,7 +3,7 @@ import { resolve } from 'path';
 
 const srcPath = resolve(__dirname, 'lib');
 const distPath = resolve(__dirname, 'dist');
-const library = 'react-optsProps';
+const library = 'react-optsprops';
 
 function isPROD(env) {
   return env === undefined || env === 'prod' || env === 'production';
@@ -29,7 +29,7 @@ function getPlugins(env) {
   switch (true) {
     case isPROD(env):
       plugins.push(new webpack.optimize.DedupePlugin());
-      // plugins.push(new webpack.optimize.UglifyJsPlugin({ minimize: true, sourceMap: true }));
+      plugins.push(new webpack.optimize.UglifyJsPlugin({ minimize: true, sourceMap: true }));
       break;
     case isDEV(env):
       plugins.push(new webpack.NoErrorsPlugin());
@@ -66,7 +66,6 @@ export default (env => ({
     },
   ]},
 
-  resolve: { extensions: ['', '.web.js', '.js', '.jsx'] },
   stats: { colors: true },
   debug: true,
   // more info:https://webpack.github.io/docs/build-performance.html#sourcemaps

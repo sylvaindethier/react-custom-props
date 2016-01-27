@@ -1,8 +1,8 @@
 {
-  "name": "react-optsProps",
+  "name": "react-optsprops",
   "version": "0.0.1",
   "description": "Configurable props for React components",
-  "main": "dist/react-optsProps.js",
+  "main": "dist/react-optsprops.js",
   "scripts": {
     "test": "NODE_ENV=test mocha --compilers js:babel-core/register --recursive ./lib/test",
     "clean": "rimraf dist/*",
@@ -13,10 +13,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sylvaindethier/react-optsProps.git"
+    "url": "https://github.com/sylvaindethier/react-optsprops.git"
   },
   "keywords": [
-    "react-optsProps",
+    "react-optsprops",
     "optsProps",
     "configurable",
     "react",
@@ -26,9 +26,9 @@
   "author": "Sylvain Dethier",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sylvaindethier/react-optsProps/issues"
+    "url": "https://github.com/sylvaindethier/react-optsprops/issues"
   },
-  "homepage": "https://github.com/sylvaindethier/react-optsProps#readme",
+  "homepage": "https://github.com/sylvaindethier/react-optsprops#readme",
   "peerDependencies": {
     "react": "^0.14.6"
   },
@@ -43,6 +43,6 @@
     "expect": "^1.13.4",
     "mocha": "^2.4.2",
     "rimraf": "^2.5.1",
-    "webpack": "^1.*"
+    "webpack": "^1.12.12"
   }
 }

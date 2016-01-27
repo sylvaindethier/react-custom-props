@@ -1,5 +1,5 @@
-# react-opts
-[![Build Status](https://travis-ci.org/sylvaindethier/react-optsProps.svg?branch=master)](https://travis-ci.org/sylvaindethier/react-optsProps)
+# react-optsprops
+[![Build Status](https://travis-ci.org/sylvaindethier/react-optsprops.svg?branch=master)](https://travis-ci.org/sylvaindethier/react-optsprops)
 
 > Configurable props for React components.
 
