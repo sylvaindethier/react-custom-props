@@ -2,7 +2,7 @@ module.exports = {
   parser: 'babel-eslint',
 
   env: {
-    browser: true, // browser global variables.
+    // browser: true, // browser global variables.
     node: true, // Node.js global variables and Node.js scoping.
     // commonjs: true, // CommonJS global variables and CommonJS scoping (use this for browser-only code that uses Browserify/WebPack).
     // worker: false, // web workers global variables.
