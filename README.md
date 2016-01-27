@@ -1,4 +1,6 @@
 # react-opts
+[![Build Status](https://travis-ci.org/sylvaindethier/react-optsProps.svg?branch=master)](https://travis-ci.org/sylvaindethier/react-optsProps)
+
 > Configurable props for React components.
 
 Add configurable props or HTML attributes to React (any ?) element / component.
