@@ -29,7 +29,7 @@
     "url": "https://github.com/sylvaindethier/react-optsProps/issues"
   },
   "homepage": "https://github.com/sylvaindethier/react-optsProps#readme",
-  "dependencies": {
+  "peerDependencies": {
     "react": "^0.14.6"
   },
   "devDependencies": {
