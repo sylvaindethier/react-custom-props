@@ -3,7 +3,7 @@ import { resolve } from 'path';
 
 const srcPath = resolve(__dirname, 'lib');
 const distPath = resolve(__dirname, 'dist');
-const library = 'react-optsprops';
+const library = 'ReactOptsProps';
 
 function isPROD(env) {
   return env === undefined || env === 'prod' || env === 'production';

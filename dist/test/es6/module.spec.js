@@ -1,5 +1,5 @@
 import expect from 'expect';
-import opts, { PropTypesOpts, ComponentOpts } from '../../react-optsprops';
+import opts, { PropTypesOpts, ComponentOpts } from '../../ReactOptsProps';
 
 describe('module', () => {
   it('should expose a default function (opts)', () => {

@@ -1,5 +1,5 @@
 var expect = require('expect');
-var _module = require('../../react-optsprops');
+var _module = require('../../ReactOptsProps');
 
 var opts = _module.default;
 describe('module', () => {
