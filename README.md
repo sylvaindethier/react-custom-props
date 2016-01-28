@@ -5,7 +5,8 @@
 
 Add configurable props or HTML attributes to React components, or any HTML elements.
 
-View the [JSbin demo](https://jsbin.com/najuju/)
+View the [JSbin demo](https://jsbin.com/xivuqe)
+View the [JSbin demo source](https://output.jsbin.com/xivuqe.es6)
 
 
 ## Use case: Design a fully configurable component
