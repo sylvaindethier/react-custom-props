@@ -9,6 +9,7 @@ function SomeComponent() {
 }
 SomeComponent.prototype = Object.create(ComponentConf.prototype);
 SomeComponent.prototype.constructor = SomeComponent;
+SomeComponent.propTypes = ComponentConf.propTypes;
 
 describe('ComponentConf class', function() {
   it('should have a "propTypes.conf" property', function() {
@@ -32,6 +33,6 @@ describe('Component extending ComponentConf', function() {
   it('instance should have a "getConfProps" method ("conf" alias)', function() {
     var component = new SomeComponent();
     expect(component.getConfProps).toBeA('function');
-    expect(component.conf).toBeA(component.getConfProps);
+    expect(component.conf).toBe(component.getConfProps);
   });
 });
