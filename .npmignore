@@ -1,7 +1,4 @@
-.babelrc
-.eslint*
-.travis.yml
+.*
+node_modules
 webpack*
 scripts
-lib/test
-dist/test

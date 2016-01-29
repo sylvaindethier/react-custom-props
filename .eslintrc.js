@@ -1,5 +1,6 @@
+/* eslint no-inline-comments:0, comma-dangle:0 */
 module.exports = {
-  parser: 'babel-eslint',
+  // parser: 'babel-eslint',
 
   env: {
     // browser: true, // browser global variables.
@@ -23,43 +24,43 @@ module.exports = {
     // serviceworker: false, // Service Worker global variables.
     // embertest: false, // Ember test helper globals.
     // webextensions: false, // WebExtensions globals.
-    es6: true, // enable all ECMAScript 6 features except for modules.
+    // es6: true, // enable all ECMAScript 6 features except for modules.
   },
 
   ecmaFeatures: {
-    arrowFunctions: true,
+    // arrowFunctions: true,
     // binaryLiterals: true,
-    blockBindings: true,
-    classes: true,
-    defaultParams: true,
-    destructuring: true,
+    // blockBindings: true,
+    // classes: true,
+    // defaultParams: true,
+    // destructuring: true,
     // forOf: true,
     // generators: true,
-    modules: true,
+    // modules: true,
     // objectLiteralComputedProperties: true,
     // objectLiteralDuplicateProperties: true,
-    objectLiteralShorthandMethods: true,
-    objectLiteralShorthandProperties: true,
+    // objectLiteralShorthandMethods: true,
+    // objectLiteralShorthandProperties: true,
     // octalLiterals: true,
     // regexUFlag: true,
     // regexYFlag: true,
-    restParams: true,
-    spread: true,
-    superInFunctions: true,
-    templateStrings: true,
+    // restParams: true,
+    // spread: true,
+    // superInFunctions: true,
+    // templateStrings: true,
     // unicodeCodePointEscapes: true,
     // globalReturn: true,
     // jsx: true,
-    experimentalObjectRestSpread: true,
+    // experimentalObjectRestSpread: true
   },
 
   // plugins: [],
 
   extends: [
     'eslint:recommended',
-    'google',
+    'google'
   ],
 
   rules: {
-  },
+  }
 };
