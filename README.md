@@ -10,7 +10,7 @@ Add configurable props or HTML attributes to React components, or any HTML eleme
 
 `npm install --save react-confprops`
 
-View the [JSbin demo](https://jsbin.com/xivuqe)
+View the [JSbin demo](https://jsbin.com/xivuqe/edit?js,output)
 
 
 ## Use case: Design a fully configurable component
