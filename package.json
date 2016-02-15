@@ -1,41 +1,53 @@
 {
-  "name": "react-confprops",
+  "name": "react-custom-props",
   "version": "0.3.0",
-  "description": "Configurable props for React components",
-  "main": "react-confprops.js",
+  "description": "Custom configurable props for React or HTML elements",
+  "main": "react-custom-props.js",
   "scripts": {
     "test": "NODE_ENV=test mocha --recursive ./test",
-    "clean": "rimraf dist/*.*",
+    "clean": "rimraf dist/*",
     "prebuild": "npm run test && npm run clean",
     "build": "NODE_ENV=production webpack -p --colors --progress",
     "watch": "npm run clean && NODE_ENV=dev webpack -d --colors --progress --watch",
     "release": "./scripts/release.sh"
   },
+  "files": [
+    "/lib",
+    "/dist"
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/sylvaindethier/react-confprops.git"
+    "url": "https://github.com/sylvaindethier/react-custom-props.git"
   },
   "keywords": [
-    "react-confprops",
-    "ReactConfProps",
-    "configurable",
+    "react-custom-props",
+    "ReactCustomProps",
     "react",
-    "component",
+    "custom",
+    "configurable",
+    "props",
+    "customProps",
     "defaultProps"
   ],
   "author": "Sylvain Dethier",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sylvaindethier/react-confprops/issues"
+    "url": "https://github.com/sylvaindethier/react-custom-props/issues"
   },
-  "homepage": "https://github.com/sylvaindethier/react-confprops#readme",
+  "homepage": "https://github.com/sylvaindethier/react-custom-props#readme",
+  "engines": {
+    "node": ">=0.10.0"
+  },
   "dependencies": {
     "react": "^0.14.6"
   },
   "devDependencies": {
+    "babel": "^6.3.26",
+    "babel-eslint": "^4.1.8",
     "eslint": "^1.10.3",
     "eslint-config-google": "^0.3.0",
     "eslint-loader": "^1.2.1",
+    "eslint-plugin-react": "^3.16.1",
     "expect": "^1.13.4",
     "mocha": "^2.4.2",
     "rimraf": "^2.5.1",
