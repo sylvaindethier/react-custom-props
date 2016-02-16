@@ -1,32 +1,103 @@
-# ReactConfProps
-[![Build Status](https://travis-ci.org/sylvaindethier/react-confprops.svg?branch=master)](https://travis-ci.org/sylvaindethier/react-confprops)
+# ReactCustomProps
+> Custom configurable props for React components / elements.
 
-> Configurable props for React components / elements.
+Add custom configurable props or HTML attributes to React components / elements, or any HTML elements.
 
-Add configurable props or HTML attributes to React components, or any HTML elements.
+[![NPM Package Stats][npm-image]][npm-url]
+[![Build Status][travis-ci-image]][travis-ci-url]
 
 
 ## Install
 
-`npm install --save react-confprops`
+Instal via npm: `npm install --save react-custom-props`
 
-View the [JSbin demo](https://jsbin.com/xivuqe/edit?js,output)
+View the [JSbin demo][demo-url]
 
+
+## Use case: Add custom props to elements
+
+Say we have a customizable `HelloWorld` component which has:
+  * a required `name` props
+  * an optional `custom` props
+  * an optional `customOptions` props
+
+Use with no `custom` props (trivial).
+```jsx
+const node = (
+  <HelloWorld name="foo" />
+);
+```
+
+Use with `custom` props values.
+```jsx
+const custom = {
+  // optional custom props can be a value
+  className: 'hello-world'
+}
+const node = (
+  <HelloWorld name="foo" custom={custom} />
+);
+```
+```jsx
+// or if you prefer
+const custom = { custom: {
+  className: 'hello-world'
+}};
+const node = (
+  <HelloWorld name="foo" {...custom} />
+);
+```
+
+Use with `custom` props functions.
+Hanlders are not evaluated by default (props name matches `/^on\w/` RegExp).
+```jsx
+const custom = { custom: {
+  // optional custom props can be a function
+  className: (...args) => ('hello-world'),
+  // handlers /^on\w/ are not evaluated by default
+}};
+```
+
+Use with `custom.children` array (indexed child)
+```jsx
+const custom = { custom: {
+  // optional children custom props can be an array
+  children: [
+    {
+      style: {backgroundColor: 'yellow'}
+    }
+  ]
+}};
+```
+
+Use with `custom.children` object (named child)
+```jsx
+const custom = { custom: {
+  // optional children custom props can be an object
+  children: {
+    span: {
+      style: {backgroundColor: 'yellow'}
+    }
+  }
+}};
+```
 
 ## Use case: Design a fully configurable component
 
   * With stateless function
+
+Custom props are evaluated with `props` in the following example.
 ```jsx
 import React, {PropTypes} from 'react';
-import conf, {PropTypesConf} from 'react-confprops';
+import {custom, addPropTypesCustom} from 'react-custom-props';
 
 export default function HelloWorld(props) {
   return (
-    // inject root optional props
-    <h1 {...conf(props)}>
+    // inject optional root props
+    <h1 {...custom(props)(props)}>
       Hello
-      // inject named child optional props
-      <span {...conf(props, 'whatEverTheName')}>
+      // inject optional named child props
+      <span {...custom(props, 'span')(props)}>
         {props.name}
       </span> !
     </h1>
@@ -35,25 +106,27 @@ export default function HelloWorld(props) {
 
 HelloWorld.propTypes = {
   name: PropTypes.string.isRequired,
-
-  // add optional props (not required)
-  conf: PropTypesConf
 };
+
+// add PropTypes Custom (not required)
+addPropTypesCustom(HelloWorld);
 ```
 
-  * With ES6 `ComponentConf` class
+  * With `CustomPropsComponent` class
+
+Custom props are evaluated with `this.props` and `this.state` in the following example.
 ```jsx
 import React, {PropTypes} from 'react';
-import {ComponentConf} from 'react-confprops';
+import {CustomPropsComponent} from 'react-custom-props';
 
-class HelloWorld extends ComponentConf {
+class HelloWorld extends CustomPropsComponent {
   render() {
     return (
-      // inject root optional props
-      <h1 {...this.conf()}>
+      // inject optional root props
+      <h1 {...this.custom()(this.props, this.state)}>
         Hello
-        // inject indexed child optional props
-        <span {...this.conf(0)}>
+        // inject optional named child props
+        <span {...this.custom('span')(this.props, this.state)}>
           {props.name}
         </span> !
       </h1>
@@ -66,19 +139,21 @@ HelloWorld.propTypes = {
 };
 ```
 
-  * Or with ES6 React `Component` class
+  * Or with React `Component` class
+
+Custom props are resolved with `this.props` and `this.state` in the following example.
 ```jsx
 import React, {PropTypes, Component} from 'react';
-import conf, {PropTypesOpts} from 'react-confprops';
+import {custom, addPropTypesCustom} from 'react-custom-props';
 
 class HelloWorld extends Component {
   render() {
     return (
-      // inject conf props
-      <h1 {...conf(this.props)}>
+      // inject optional root custom props
+      <h1 {...custom(this.props)(this.props, this.state)}>
         Hello
-        // inject named child optional props
-        <span {...conf(this.props, 'whatEverTheName')}>
+        // inject optional named child props
+        <span {...custom(this.props, 'span')(this.props, this.state)}>
           {props.name}
         </span> !
       </h1>
@@ -88,71 +163,22 @@ class HelloWorld extends Component {
 
 HelloWorld.propTypes = {
   name: PropTypes.string.isRequired,
-  opts: PropTypesConf
 };
+addPropTypesCustom(HelloWorld);
 ```
 
 
-## Use case: Add optional props to those components
+## TODO
 
-The configurable HelloWorld component has:
-  - a required `name` props
-  - an optional `conf` props
+Have a look at this (even if I already know that):
+ * https://github.com/boennemann/badges
+ * http://shields.io/
+ * https://www.smashingmagazine.com/2016/02/writing-next-generation-reusable-javascript-modules/
+ *
 
-Use with no `conf` props (trivial).
-```jsx
-const node = (
-  <HelloWorld name="foo" />
-);
-```
 
-Use with `conf` simple props
-```jsx
-const conf = {
-  // optional conf props can be a value
-  className: 'hello-world'
-}
-const node = (
-  <HelloWorld name="foo" conf={conf} />
-);
-
-// or if you prefer
-const HelloWorldConf = { conf: {
-  className: 'hello-world'
-}};
-const node = (
-  <HelloWorld name="foo" {...HelloWorldConf} />
-);
-```
-
-Use with `conf` callback props
-```jsx
-const HelloWorldConf = { conf: {
-  // optional conf props can be a callback
-  className: (props, state) => ('hello-world')
-}};
-```
-
-Use with `conf.conf` array (indexed child `conf`)
-```jsx
-const HelloWorldConf = { conf: {
-  // optional child conf props can be an array
-  conf: [
-    {
-      style: {backgroundColor: 'yellow'}
-    }
-  ]
-}};
-```
-
-Use with `conf.conf` object (named child `conf`)
-```jsx
-const HelloWorldConf = { conf: {
-  // optional child conf props can be an object
-  conf: {
-    span: {
-      style: {backgroundColor: 'yellow'}
-    }
-  }
-}};
-```
+[travis-ci-image]: https://travis-ci.org/sylvaindethier/react-custom-props.svg?branch=master&style=flat-square
+[travis-ci-url]: https://travis-ci.org/sylvaindethier/react-custom-props
+[npm-image]: https://nodei.co/npm/react-confprops.png?downloads=true&stars=true
+[npm-url]: https://www.npmjs.org/package/react-confprops
+[demo-url]: https://jsbin.com/xivuqe/edit?js,output
