@@ -187,11 +187,3 @@ HelloWorld.propTypes = {
 };
 addPropTypesCustom(HelloWorld);
 ```
-
-
-## TODO
-
-Have a look at this (even if I already know that):
- * https://github.com/boennemann/badges
- * http://shields.io/
- * https://www.smashingmagazine.com/2016/02/writing-next-generation-reusable-javascript-modules/
