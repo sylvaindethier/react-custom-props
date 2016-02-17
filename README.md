@@ -3,19 +3,38 @@
 
 Add custom configurable props or HTML attributes to React components / elements, or any HTML elements.
 
+[npm-url]: https://www.npmjs.org/package/react-custom-props
+[npm-image]: https://nodei.co/npm/react-custom-props.svg?downloads=true&stars=true
+[build-url]: https://travis-ci.org/sylvaindethier/react-custom-props
+[build-image]: https://img.shields.io/travis/sylvaindethier/react-custom-props/master.svg?style=flat-square
+[coverage-url]: https://coveralls.io/r/sylvaindethier/react-custom-props?branch=master
+[coverage-image]: https://img.shields.io/coveralls/sylvaindethier/react-custom-props.svg?style=flat-square
+[deps-image]: https://img.shields.io/david/sylvaindethier/react-custom-props.svg?style=flat-square
+[deps-url]: https://david-dm.org/sylvaindethier/react-custom-props#info=dependencies
+[devDeps-image]: https://img.shields.io/david/dev/sylvaindethier/react-custom-props.svg?style=flat-square
+[devDeps-url]: https://david-dm.org/sylvaindethier/react-custom-props#info=devDependencies
+[demo-url]: https://jsbin.com/xivuqe/edit?js,output
+
+
 [![NPM Package Stats][npm-image]][npm-url]
-[![Build Status][travis-ci-image]][travis-ci-url]
+
+[![Dependencies][deps-image]][deps-url]
+[![Dev Dependencies][devDeps-image]][devDeps-url]
+[![Build Status][build-image]][build-url]
+[![Coverage Status][coverage-image]][coverage-url]
 
 
 ## Install
-
 Instal via npm: `npm install --save react-custom-props`
 
 View the [JSbin demo][demo-url]
 
 
-## Use case: Add custom props to elements
+## API
+See the [API documentation file](API.md)
 
+
+## Use case: Add custom props to elements
 Say we have a customizable `HelloWorld` component which has:
   * a required `name` props
   * an optional `custom` props
@@ -174,11 +193,3 @@ Have a look at this (even if I already know that):
  * https://github.com/boennemann/badges
  * http://shields.io/
  * https://www.smashingmagazine.com/2016/02/writing-next-generation-reusable-javascript-modules/
- *
-
-
-[travis-ci-image]: https://travis-ci.org/sylvaindethier/react-custom-props.svg?branch=master&style=flat-square
-[travis-ci-url]: https://travis-ci.org/sylvaindethier/react-custom-props
-[npm-image]: https://nodei.co/npm/react-confprops.png?downloads=true&stars=true
-[npm-url]: https://www.npmjs.org/package/react-confprops
-[demo-url]: https://jsbin.com/xivuqe/edit?js,output
