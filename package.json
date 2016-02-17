@@ -5,6 +5,8 @@
   "main": "react-custom-props.js",
   "scripts": {
     "test": "NODE_ENV=test mocha --recursive ./test",
+    "coverage": "NODE_ENV=test istanbul cover _mocha -- -R spec",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
     "clean": "rimraf dist/*",
     "prebuild": "npm run test && npm run clean",
     "build": "NODE_ENV=production webpack -p --colors --progress",
@@ -44,11 +46,13 @@
   "devDependencies": {
     "babel": "^6.3.26",
     "babel-eslint": "^4.1.8",
+    "coveralls": "^2.11.6",
     "eslint": "^1.10.3",
     "eslint-config-google": "^0.3.0",
     "eslint-loader": "^1.2.1",
     "eslint-plugin-react": "^3.16.1",
     "expect": "^1.13.4",
+    "istanbul": "^0.4.2",
     "mocha": "^2.4.2",
     "rimraf": "^2.5.1",
     "webpack": "^1.12.12"
