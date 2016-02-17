@@ -5,6 +5,7 @@ Add custom configurable props or HTML attributes to React components / elements,
 
 [npm-url]: https://www.npmjs.org/package/react-custom-props
 [npm-image]: https://nodei.co/npm/react-custom-props.svg?downloads=true&stars=true
+[npm-version-image]: https://img.shields.io/npm/v/react-custom-props.svg?style=flat-square
 [build-url]: https://travis-ci.org/sylvaindethier/react-custom-props
 [build-image]: https://img.shields.io/travis/sylvaindethier/react-custom-props/master.svg?style=flat-square
 [coverage-url]: https://coveralls.io/r/sylvaindethier/react-custom-props?branch=master
@@ -18,6 +19,7 @@ Add custom configurable props or HTML attributes to React components / elements,
 
 [![NPM Package Stats][npm-image]][npm-url]
 
+[![NPM Version][npm-version-image]][npm-url]
 [![Dependencies][deps-image]][deps-url]
 [![Dev Dependencies][devDeps-image]][devDeps-url]
 [![Build Status][build-image]][build-url]
