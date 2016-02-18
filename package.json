@@ -4,13 +4,12 @@
   "description": "Custom configurable props for React or HTML elements",
   "main": "react-custom-props.js",
   "scripts": {
-    "clean": "rimraf dist/* lib/*",
-    "pretest": "npm run clean && babel ./src -d ./lib",
     "test": "NODE_ENV=test mocha --compilers js:babel-core/register",
     "test:dist": "NODE_ENV=test mocha --compilers js:babel-core/register ./test/dist",
     "coverage": "NODE_ENV=test istanbul cover _mocha -- -R spec --compilers js:babel-core/register --recursive",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
-    "prebuild": "npm run test",
+    "clean": "rimraf dist/*",
+    "prebuild": "npm run test && npm run clean",
     "postbuild": "npm run test:dist",
     "build": "NODE_ENV=production webpack --colors --progress",
     "build:min": "NODE_ENV=production;MINIFY=true webpack --colors --progress",
@@ -48,6 +47,7 @@
     "react": "^0.14.6"
   },
   "devDependencies": {
+    "babel-cli": "^6.5.1",
     "babel-core": "^6.5.2",
     "babel-eslint": "^5.0.0",
     "babel-loader": "^6.2.2",
