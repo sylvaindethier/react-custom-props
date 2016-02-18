@@ -1,7 +1,7 @@
 import webpack from 'webpack';
 import { resolve } from 'path';
 
-const srcPath = resolve(__dirname, 'lib');
+const srcPath = resolve(__dirname, 'src');
 const distPath = resolve(__dirname, 'dist');
 const library = 'ReactCustomProps';
 
