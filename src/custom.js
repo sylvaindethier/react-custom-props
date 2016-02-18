@@ -76,14 +76,16 @@ function createResolver(custom, options) {
 function custom(props) {
   // extract the child path: arguments unless the first one (props)
   const len = arguments.length;
-  let path = new Array(len ? len - 1 : 0);
-  for (let i = 1; i < len; ++i) {
-    path[i - 1] = arguments[i];
+  var children = new Array(len ? len - 1 : 0);
+  for (var i = 1; i < len; ++i) {
+    children[i - 1] = arguments[i];
   }
   // get the unique child path if so
-  if (path.length === 1 && isArray(path[0])) { path = path[0]; }
+  if (children.length === 1 && isArray(children[0])) {
+    children = children[0];
+  }
 
-  const custom = getCustomAt(props, path);
+  const custom = getCustomAt(props, children);
   const options = getOptions(props);
 
   // return the resolver

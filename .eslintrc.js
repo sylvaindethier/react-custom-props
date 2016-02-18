@@ -2,8 +2,6 @@
 module.exports = {
   root: true,
 
-  // parser: 'babel-eslint',
-
   env: {
     // browser: true, // browser global variables.
     node: true, // Node.js global variables and Node.js scoping.
@@ -26,34 +24,38 @@ module.exports = {
     // serviceworker: true, // Service Worker global variables.
     // embertest: true, // Ember test helper globals.
     // webextensions: true, // WebExtensions globals.
-    // es6: true, // enable all ECMAScript 6 features except for modules.
+    es6: true, // enable all ECMAScript 6 features except for modules.
+  },
+
+  parser: 'babel-eslint',
+  parserOptions: {
+    ecmaVersion: 6,
+    sourceType: 'module',
   },
 
   ecmaFeatures: {
-    // arrowFunctions: true,
+    arrowFunctions: true,
     // binaryLiterals: true,
-    // blockBindings: true,
-    // classes: true,
-    // defaultParams: true,
-    // destructuring: true,
+    blockBindings: true,
+    classes: true,
+    defaultParams: true,
+    destructuring: true,
     // forOf: true,
     // generators: true,
-    // modules: true,
-    // objectLiteralComputedProperties: true,
+    objectLiteralComputedProperties: true,
     // objectLiteralDuplicateProperties: true,
-    // objectLiteralShorthandMethods: true,
-    // objectLiteralShorthandProperties: true,
+    objectLiteralShorthandMethods: true,
+    objectLiteralShorthandProperties: true,
     // octalLiterals: true,
     // regexUFlag: true,
     // regexYFlag: true,
-    // restParams: true,
-    // spread: true,
-    // superInFunctions: true,
-    // templateStrings: true,
+    restParams: true,
+    spread: true,
+    superInFunctions: true,
+    templateStrings: true,
     // unicodeCodePointEscapes: true,
     // globalReturn: true,
-    // jsx: true,
-    // experimentalObjectRestSpread: true
+    // experimentalObjectRestSpread: true,
   },
 
   // plugins: [],
