@@ -18,13 +18,13 @@ echo "Update type: <version> | (pre)major | (pre)minor | (pre)patch | prerelease
 printf "Which update type is ? "
 read update_type
 
-## add and commit unstaged changes
-git add --all
-git commit --allow-empty -am "Update $update_type from $current_version"
-
 ## update package version (disable git-tag-version, will be done after)
 version=$(npm --no-git-tag-version version $update_type)
 echo "New version is '$version'"
+
+## add and commit unstaged changes
+git add --all
+git commit --allow-empty -am "Release $update_type (from $current_version)"
 
 ## create tag version
 git tag -a "$version" -m "version $version"
