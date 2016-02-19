@@ -26,7 +26,7 @@ if (isPROD) { plugins.push(new webpack.optimize.DedupePlugin()); }
 if (isMIN) {
   plugins.push(new webpack.optimize.UglifyJsPlugin({
     minimize: true,
-    sourceMap: true,
+    // sourceMap: true,
   }));
 }
 
@@ -64,5 +64,5 @@ export default {
   debug: true,
   // more info:https://webpack.github.io/docs/build-performance.html#sourcemaps
   // and https://webpack.github.io/docs/configuration.html#devtool
-  devtool: isPROD ? 'source-map' : '#inline-source-map',
+  // devtool: isPROD ? 'source-map' : '#inline-source-map',
 };
