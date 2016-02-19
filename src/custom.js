@@ -1,5 +1,4 @@
 'use strict';
-
 import { isVoid, isArray, isFunction, matches, getValue } from './utils';
 import { getCustomAt } from './childPath';
 import { optionsKey } from './keys';

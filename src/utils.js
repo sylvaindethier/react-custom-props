@@ -1,5 +1,4 @@
 'use strict';
-
 // shortcuts
 const isArray = Array.isArray;
 const isNumber = Number.isInteger;

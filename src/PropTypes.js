@@ -1,5 +1,4 @@
 'use strict';
-
 import { PropTypes } from 'react';
 import { customKey, optionsKey, childrenKey } from './keys';
 

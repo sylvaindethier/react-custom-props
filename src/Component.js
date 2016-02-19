@@ -1,5 +1,4 @@
 'use strict';
-
 import { Component } from 'react';
 import { custom as _custom } from './custom';
 import { addPropTypes } from './PropTypes';
