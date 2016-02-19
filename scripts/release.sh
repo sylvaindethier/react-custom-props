@@ -8,7 +8,6 @@ fi
 
 ## run the build
 npm run build
-npm run build:min
 
 ## get the current version from package
 current_version=$(node -p "require('./package').version")
