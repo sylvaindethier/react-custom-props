@@ -7,11 +7,6 @@ describe('lib CommonJS', function() {
     expect(lib).toBeA('function');
   });
 
-  it('should expose a "CustomPropsComponent" function', function() {
-    expect(lib.CustomPropsComponent).toBeA('function');
-    expect(lib.ReactComponentCustomProps).toBeA('function');
-  });
-
   it('should expose a "PropTypesCustom" function', function() {
     expect(lib.PropTypesCustom).toBeA('function');
     expect(lib.ReactPropTypesCustom).toBeA('function');

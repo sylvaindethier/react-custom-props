@@ -7,11 +7,6 @@ describe('dist/ReactCustomProps', function() {
     expect(dist.default).toBeA('function');
   });
 
-  it('should expose a "CustomPropsComponent" function', function() {
-    expect(dist.CustomPropsComponent).toBeA('function');
-    expect(dist.ReactComponentCustomProps).toBeA('function');
-  });
-
   it('should expose a "PropTypesCustom" function', function() {
     expect(dist.PropTypesCustom).toBeA('function');
     expect(dist.ReactPropTypesCustom).toBeA('function');
