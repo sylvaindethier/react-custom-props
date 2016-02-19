@@ -22,6 +22,7 @@ Add custom configurable props or HTML attributes to React components / elements,
 [![NPM Version][npm-version-image]][npm-url]
 [![Dependencies][deps-image]][deps-url]
 [![Dev Dependencies][devDeps-image]][devDeps-url]
+
 [![Build Status][build-image]][build-url]
 [![Coverage Status][coverage-image]][coverage-url]
 
