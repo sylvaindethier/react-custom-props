@@ -1,8 +1,9 @@
 'use strict';
+import $assign from 'babel-runtime/core-js/object/assign';
+import $keys from 'babel-runtime/core-js/object/keys';
 import { isVoid, isArray, isFunction, matches, getValue } from './utils';
 import { getCustomAt } from './childPath';
 import { optionsKey } from './keys';
-
 
 // constants
 const defaults = {
@@ -18,7 +19,7 @@ const defaults = {
  */
 function getOptions(props) {
   // merge defaults and props options key value
-  return Object.assign({}, defaults, getValue(props, optionsKey));
+  return $assign({}, defaults, getValue(props, optionsKey));
 }
 
 /**
@@ -44,7 +45,7 @@ function createResolver(custom, { ignore, raw, bind }) {
 
     const args = arguments;
     const resolved = {};
-    Object.keys(custom).forEach(key => {
+    $keys(custom).forEach(key => {
       // skip ignore keys
       if (matches(key, ignore)) { return; }
 

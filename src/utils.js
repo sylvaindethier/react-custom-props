@@ -1,7 +1,7 @@
 'use strict';
 // shortcuts
+import isInteger from 'babel-runtime/core-js/number/is-integer';
 const isArray = Array.isArray;
-const isInteger = Number.isInteger;
 
 /**
  * Tests if a value is void
