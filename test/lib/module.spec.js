@@ -1,15 +1,9 @@
 'use strict';
 import expect from 'expect';
 import custom, {
-  CustomPropsComponent,
-  ReactComponentCustomProps,
-
-  PropTypesCustom,
-  ReactPropTypesCustom,
-
-  PropTypesCustomOptions,
-  ReactPropTypesCustomOptions,
-
+  CustomPropsComponent, ReactComponentCustomProps,
+  PropTypesCustom, ReactPropTypesCustom,
+  PropTypesCustomOptions, ReactPropTypesCustomOptions,
   addPropTypesCustom,
 } from '../../react-custom-props';
 

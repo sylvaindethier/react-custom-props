@@ -1,7 +1,7 @@
 'use strict';
 // shortcuts
 const isArray = Array.isArray;
-const isNumber = Number.isInteger;
+const isInteger = Number.isInteger;
 
 /**
  * Tests if a value is void
@@ -70,7 +70,7 @@ function getValue(obj, key) {
 
 export {
   isArray,
-  isNumber,
+  isInteger,
   isVoid,
   isString,
   isFunction,

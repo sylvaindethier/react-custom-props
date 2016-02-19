@@ -2,7 +2,7 @@
 import expect from 'expect';
 import {
   isVoid,
-  isNumber,
+  isInteger,
   isString,
   isArray,
   isFunction,
@@ -21,11 +21,11 @@ describe('src/utils', function() {
     expect(isVoid(null)).toBe(true);
   });
 
-  it('isNumber should return whether or not the value is a Number', function() {
-    expect(isNumber).toBeA('function');
-    expect(isNumber()).toBe(false);
-    expect(isNumber('0')).toBe(false);
-    expect(isNumber(0)).toBe(true);
+  it('isInteger should return whether or not the value is an integer Number', function() {
+    expect(isInteger).toBeA('function');
+    expect(isInteger()).toBe(false);
+    expect(isInteger('0')).toBe(false);
+    expect(isInteger(0)).toBe(true);
   });
 
   it('isString should return whether or not the value is a String', function() {

@@ -1,5 +1,5 @@
 'use strict';
-import { isVoid, isNumber, isString, isArray, getValue } from './utils';
+import { isVoid, isInteger, isString, isArray, getValue } from './utils';
 import { customKey, childrenKey } from './keys';
 
 
@@ -24,7 +24,7 @@ function getChild(custom, child) {
  */
 function toChildren(childPath) {
   if (isVoid(childPath)) { return []; }
-  if (isNumber(childPath)) { return [childPath]; }
+  if (isInteger(childPath)) { return [childPath]; }
   if (isString(childPath)) {
     return childPath.length ? childPath.split(pathSeparator) : [];
   }
