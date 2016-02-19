@@ -10,7 +10,7 @@
     "test-dist": "NODE_ENV=test mocha ./test/dist",
     "coverage": "NODE_ENV=test istanbul cover _mocha -- -R spec --compilers js:babel-core/register",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
-    "clean": "rimraf dist/*",
+    "clean": "rimraf dist/* lib/*",
     "prebuild": "npm run test-src && npm run clean",
     "build": "npm run build-lib && npm run build-dist",
     "build-lib": "NODE_ENV=production babel ./src -d lib",
