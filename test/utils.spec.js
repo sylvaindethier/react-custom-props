@@ -1,19 +1,18 @@
 'use strict';
-const expect = require('expect');
+import expect from 'expect';
+import {
+  isVoid,
+  isNumber,
+  isString,
+  isArray,
+  isFunction,
+  isRegExp,
+  matches,
+  getValue,
+} from '../src/utils';
 
-const utils = require('../lib/utils');
-// const defaults = utils.defaults;
-const isVoid = utils.isVoid;
-const isNumber = utils.isNumber;
-const isString = utils.isString;
-const isArray = utils.isArray;
-const isFunction = utils.isFunction;
-const isRegExp = utils.isRegExp;
-const matches = utils.matches;
-const getValue = utils.getValue;
 
-
-describe('lib/utils', function() {
+describe('src/utils', function() {
   it('isVoid should return whether or not the value is void', function() {
     expect(isVoid).toBeA('function');
     expect(isVoid(false)).toBe(false);
@@ -52,28 +51,33 @@ describe('lib/utils', function() {
     expect(isRegExp).toBeA('function');
     expect(isRegExp()).toBe(false);
     expect(isRegExp('')).toBe(false);
-    expect(isRegExp(/RegExp/)).toBe(true);
+    expect(isRegExp(/aRegExp/)).toBe(true);
   });
 
   it('matches should return whether or not the value matches', function() {
     expect(matches).toBeA('function');
     let matcher;
+
     // void matcher always false
     expect(matches()).toBe(false);
     expect(matches('foo')).toBe(false);
+
     // value matcher
     matcher = 'foo';
     expect(matches('bar', matcher)).toBe(false);
     expect(matches('foo', matcher)).toBe(true);
+
     // RegExp matcher
     matcher = /^foo/;
     expect(matches('bar', matcher)).toBe(false);
     expect(matches('foo', matcher)).toBe(true);
+
     // Function matcher
-    const identity = function(value) { return value; };
+    const identity = v => (v);
     matcher = identity;
     expect(matches(0, matcher)).toBe(false);
     expect(matches(1, matcher)).toBe(true);
+
     // Array matcher
     matcher = ['foo', /^foo/, identity];
     expect(matches('foo', [])).toBe(false);

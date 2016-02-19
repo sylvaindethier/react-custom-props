@@ -1,31 +1,42 @@
 'use strict';
-const expect = require('expect');
+import expect from 'expect';
+import { customKey, childrenKey } from '../src/keys';
+import {
+  toChildren,
+  getChild,
+  getChildAt,
+  getCustomAt,
+} from '../src/childPath';
 
-const childPath = require('../lib/childPath');
-const toChildren = childPath.toChildren;
-const getChild = childPath.getChild;
-const getChildAt = childPath.getChildAt;
-const getCustomAt = childPath.getCustomAt;
 
-const keys = require('../lib/keys');
-const customKey = keys.custom;
-const childrenKey = keys.children;
+const Custom = {
+  id: 'props',
+  [childrenKey]: {
+    foo: {
+      id: 'props.foo',
+      [childrenKey]: {
+        baz: { id: 'props.foo.baz' },
+        bar: {
+          id: 'props.foo.bar',
+          [childrenKey]: {
+            baz: { id: 'props.foo.bar.baz' },
+          },
+        },
+      },
+    },
+  },
+};
 
-const Custom = { id: 'props' };
-const CustomFoo = { id: 'props.foo' };
-const CustomFooBar = { id: 'props.foo.bar' };
-const CustomFooBarBaz = { id: 'props.foo.bar.baz' };
-CustomFooBar[childrenKey] = { baz: CustomFooBarBaz };
-const CustomFooBaz = { id: 'props.foo.baz' };
-CustomFoo[childrenKey] = { bar: CustomFooBar, baz: CustomFooBaz };
-Custom[childrenKey] = { foo: CustomFoo };
+const props = {
+  name: 'value',
+  [customKey]: Custom,
+};
 
-const props = { name: 'value' };
-props[customKey] = Custom;
 
-describe('lib/child', function() {
+describe('src/childPath', function() {
   it('toChildren should return the children array', function() {
     expect(toChildren).toBeA('function');
+    // void
     expect(toChildren()).toEqual([]);
     // Number
     expect(toChildren(0)).toEqual([0]);
@@ -39,8 +50,10 @@ describe('lib/child', function() {
     expect(toChildren([''])).toEqual([]);
     expect(toChildren(['foo'])).toEqual(['foo']);
     expect(toChildren(['foo.bar.baz'])).toEqual(['foo', 'bar', 'baz']);
-    expect(toChildren(['foo', 'bar.baz'])).toEqual(['foo', 'bar', 'baz']);
-    expect(toChildren([0, '', 'foo', 'bar.baz'])).toEqual([0, 'foo', 'bar', 'baz']);
+    // throws TypeError
+    expect(function(obj) {
+      return toChildren(obj);
+    }).withArgs({}).toThrow(TypeError);
   });
 
   it('getChild should return the child', function() {
