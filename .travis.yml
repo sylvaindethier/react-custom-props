@@ -8,5 +8,5 @@ node_js:
   - "0.10"
 branches:
   only:
-  - master
+    - master
 after_script: "npm run test:dist && npm run coverage && npm run coveralls"
