@@ -1,6 +1,6 @@
 {
   "name": "react-custom-props",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "Custom configurable props for React or HTML elements",
   "main": "react-custom-props.js",
   "scripts": {
