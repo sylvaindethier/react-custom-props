@@ -5,8 +5,8 @@
   "main": "react-custom-props.js",
   "scripts": {
     "test": "npm run test-src && npm run test-lib && npm run test-dist",
-    "test-src": "NODE_ENV=test mocha --compilers js:babel-core/register --require babel-runtime/helpers/defineProperty ./test",
-    "test-lib": "NODE_ENV=test mocha --compilers js:babel-core/register --require babel-runtime/helpers/defineProperty ./test/lib",
+    "test-src": "NODE_ENV=test mocha --compilers js:babel-core/register ./test/src",
+    "test-lib": "NODE_ENV=test mocha --compilers js:babel-core/register ./test/lib",
     "test-dist": "NODE_ENV=test mocha ./test/dist",
     "coverage": "NODE_ENV=test istanbul cover _mocha -- -R spec --compilers js:babel-core/register",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
@@ -56,6 +56,7 @@
     "babel-core": "^6.5.2",
     "babel-eslint": "^5.0.0",
     "babel-loader": "^6.2.2",
+    "babel-plugin-transform-runtime": "^6.5.2",
     "babel-preset-es2015": "^6.5.0",
     "babel-runtime": "^6.5.0",
     "coveralls": "^2.11.6",
