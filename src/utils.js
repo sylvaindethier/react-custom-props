@@ -1,6 +1,6 @@
 'use strict';
 // shortcuts
-import isInteger from 'babel-runtime/core-js/number/is-integer';
+const isInteger = Number.isInteger;
 const isArray = Array.isArray;
 
 /**
@@ -67,6 +67,7 @@ function matches(value, matcher) {
 function getValue(obj, key) {
   return isVoid(obj) ? undefined : obj[key];
 }
+
 
 export {
   isArray,
