@@ -24,7 +24,7 @@ echo "New version is '$version'"
 
 ## add and commit unstaged changes
 git add --all
-git commit --allow-empty -am "Release $update_type (from $current_version)"
+git commit --allow-empty -am "release $update_type (from $current_version)"
 
 ## create tag version
 git tag -a "$version" -m "version $version"
