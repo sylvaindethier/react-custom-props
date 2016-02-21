@@ -4,7 +4,7 @@ import custom, {
   PropTypesCustom, ReactPropTypesCustom,
   PropTypesCustomOptions, ReactPropTypesCustomOptions,
   addPropTypesCustom,
-} from '../src';
+} from '../../src';
 
 
 describe('src/index', function() {

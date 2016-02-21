@@ -1,7 +1,7 @@
 'use strict';
 import expect from 'expect';
-import { customKey, optionsKey } from '../src/keys';
-import { addPropTypes, Custom, Options } from '../src/PropTypes';
+import { customKey, optionsKey } from '../../src/keys';
+import { addPropTypes, Custom, Options } from '../../src/PropTypes';
 
 
 describe('src/PropTypes', function() {

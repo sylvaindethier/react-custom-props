@@ -9,7 +9,7 @@ import {
   isRegExp,
   matches,
   getValue,
-} from '../src/utils';
+} from '../../src/utils';
 
 
 describe('src/utils', function() {

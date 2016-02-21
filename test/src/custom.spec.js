@@ -1,13 +1,13 @@
 'use strict';
 import expect from 'expect';
-import { customKey, childrenKey, optionsKey } from '../src/keys';
+import { customKey, childrenKey, optionsKey } from '../../src/keys';
 import {
   defaults,
   getOptions,
   matchesCall,
   createResolver,
   custom,
-} from '../src/custom';
+} from '../../src/custom';
 
 
 const identity = v => (v);

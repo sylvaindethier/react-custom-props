@@ -1,12 +1,12 @@
 'use strict';
 import expect from 'expect';
-import { customKey, childrenKey } from '../src/keys';
+import { customKey, childrenKey } from '../../src/keys';
 import {
   toChildren,
   getChild,
   getChildAt,
   getCustomAt,
-} from '../src/childPath';
+} from '../../src/childPath';
 
 
 const Custom = {
