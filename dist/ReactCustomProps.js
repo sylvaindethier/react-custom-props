@@ -59,13 +59,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.addPropTypesCustom = exports.ReactPropTypesCustomOptions = exports.PropTypesCustomOptions = exports.ReactPropTypesCustom = exports.PropTypesCustom = undefined;
+	exports.addPropTypesCustom = exports.ReactPropTypesCustomOptions = exports.PropTypesCustomOptions = exports.ReactPropTypesCustom = exports.PropTypesCustom = exports.custom = exports.default = undefined;
 
 	var _custom = __webpack_require__(9);
 
 	var _PropTypes = __webpack_require__(7);
 
 	exports.default = _custom.custom;
+	exports.custom = _custom.custom;
 	exports.PropTypesCustom = _PropTypes.Custom;
 	exports.ReactPropTypesCustom = _PropTypes.Custom;
 	exports.PropTypesCustomOptions = _PropTypes.Options;
@@ -165,6 +166,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	var isInteger = _isInteger2.default;
 	var isArray = Array.isArray;
 
 	/**
@@ -239,7 +241,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	exports.isArray = isArray;
-	exports.isInteger = _isInteger2.default;
+	exports.isInteger = isInteger;
 	exports.isVoid = isVoid;
 	exports.isString = isString;
 	exports.isFunction = isFunction;
@@ -406,13 +408,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	exports.custom = exports.createResolver = exports.matchesCall = exports.getOptions = exports.defaults = undefined;
 
-	var _assign = __webpack_require__(11);
-
-	var _assign2 = _interopRequireDefault(_assign);
-
 	var _keys = __webpack_require__(12);
 
 	var _keys2 = _interopRequireDefault(_keys);
+
+	var _assign = __webpack_require__(11);
+
+	var _assign2 = _interopRequireDefault(_assign);
 
 	var _utils = __webpack_require__(4);
 
@@ -422,7 +424,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// constants
 	var defaults = {
 	  ignore: null,
 	  raw: /^on\w/,
