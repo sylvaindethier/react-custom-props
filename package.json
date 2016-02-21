@@ -4,19 +4,18 @@
   "description": "Custom configurable props for React or HTML elements",
   "main": "react-custom-props.js",
   "scripts": {
-    "pretest": "rimraf lib/* && npm run build-lib",
-    "test": "npm run test-src && npm run test-lib && npm run test-dist",
-    "test-src": "NODE_ENV=test mocha --compilers js:babel-core/register ./test/src",
-    "test-lib": "NODE_ENV=test mocha --compilers js:babel-core/register ./test/lib",
-    "test-dist": "NODE_ENV=test mocha ./test/dist",
+    "clean": "rimraf lib dist coverage",
+    "prebuild": "npm run clean && npm run test:src",
+    "build:lib": "babel src -d lib",
+    "build:dist": "NODE_ENV=development webpack && NODE_ENV=production MINIFY=true webpack",
+    "build": "npm run build:lib && npm run build:dist",
+    "postbuild": "npm run test:lib && npm run test:dist",
+    "test:src": "NODE_ENV=test mocha --compilers js:babel-core/register ./test/src",
+    "test:lib": "NODE_ENV=test mocha --compilers js:babel-core/register ./test/lib",
+    "test:dist": "NODE_ENV=test mocha ./test/dist",
+    "test": "npm run test:src && npm run test:lib && npm run test:dist",
     "coverage": "NODE_ENV=test istanbul cover _mocha -- -R spec --compilers js:babel-core/register",
-    "coveralls": "cat ./coverage/lcov.info | coveralls",
-    "clean": "rimraf dist/* lib/*",
-    "prebuild": "npm run clean && npm run test-src",
-    "build": "npm run build-lib && npm run build-dist",
-    "build-lib": "NODE_ENV=production babel ./src -d lib",
-    "build-dist": "NODE_ENV=production webpack && NODE_ENV=production MINIFY=true webpack",
-    "postbuild": "npm run test-lib && npm run test-dist",
+    "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls",
     "release": "./scripts/release.sh"
   },
   "files": [
@@ -49,7 +48,7 @@
     "node": ">=0.10.0"
   },
   "dependencies": {
-    "react": "^0.14.6"
+    "react": "^0.14.0"
   },
   "devDependencies": {
     "babel-cli": "^6.5.1",
