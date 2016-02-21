@@ -3,8 +3,8 @@ const expect = require('expect');
 const lib = require('../../react-custom-props');
 
 describe('lib CommonJS', function() {
-  it('should expose a default function', function() {
-    expect(lib).toBeA('function');
+  it('should expose a "custom" function', function() {
+    expect(lib.custom).toBeA('function');
   });
 
   it('should expose a "PropTypesCustom" function', function() {
