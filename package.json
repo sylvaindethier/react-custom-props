@@ -16,7 +16,8 @@
     "test": "npm run test:src && npm run test:lib && npm run test:dist",
     "coverage": "NODE_ENV=test istanbul cover _mocha -- -R spec --compilers js:babel-core/register",
     "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls",
-    "release": "./scripts/release.sh"
+    "release": "./scripts/release.sh",
+    "postinstall": "npm install react"
   },
   "files": [
     "src",
@@ -45,7 +46,7 @@
   },
   "homepage": "https://github.com/sylvaindethier/react-custom-props#readme",
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=0.12.0"
   },
   "dependencies": {
     "babel-runtime": "^6.5.0"
