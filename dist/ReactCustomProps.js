@@ -11,60 +11,63 @@
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
-
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
-
+/******/
 /******/ 		// Check if module is in cache
 /******/ 		if(installedModules[moduleId])
 /******/ 			return installedModules[moduleId].exports;
-
+/******/
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			exports: {},
 /******/ 			id: moduleId,
 /******/ 			loaded: false
 /******/ 		};
-
+/******/
 /******/ 		// Execute the module function
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-
+/******/
 /******/ 		// Flag the module as loaded
 /******/ 		module.loaded = true;
-
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-
-
+/******/
+/******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
-
+/******/
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
-
+/******/
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
-
+/******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-
+	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 	exports.addPropTypesCustom = exports.ReactPropTypesCustomOptions = exports.PropTypesCustomOptions = exports.ReactPropTypesCustom = exports.PropTypesCustom = exports.custom = exports.default = undefined;
-
-	var _custom = __webpack_require__(9);
-
-	var _PropTypes = __webpack_require__(7);
-
+	
+	var _custom = __webpack_require__(/*! ./custom */ 9);
+	
+	var _PropTypes = __webpack_require__(/*! ./PropTypes */ 7);
+	
 	exports.default = _custom.custom;
 	exports.custom = _custom.custom;
 	exports.PropTypesCustom = _PropTypes.Custom;
@@ -75,6 +78,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 1 */
+/*!*********************************************!*\
+  !*** ./~/core-js/library/modules/$.core.js ***!
+  \*********************************************/
 /***/ function(module, exports) {
 
 	var core = module.exports = {version: '1.2.6'};
@@ -82,30 +88,36 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 2 */
+/*!*********************!*\
+  !*** ./src/keys.js ***!
+  \*********************/
 /***/ function(module, exports) {
 
 	'use strict';
-
+	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 	var customKey = 'custom';
 	var optionsKey = 'customOptions';
 	var childrenKey = 'children';
-
+	
 	exports.customKey = customKey;
 	exports.optionsKey = optionsKey;
 	exports.childrenKey = childrenKey;
 
 /***/ },
 /* 3 */
+/*!***********************************************!*\
+  !*** ./~/core-js/library/modules/$.export.js ***!
+  \***********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	var global    = __webpack_require__(20)
-	  , core      = __webpack_require__(1)
-	  , ctx       = __webpack_require__(18)
+	var global    = __webpack_require__(/*! ./$.global */ 20)
+	  , core      = __webpack_require__(/*! ./$.core */ 1)
+	  , ctx       = __webpack_require__(/*! ./$.ctx */ 18)
 	  , PROTOTYPE = 'prototype';
-
+	
 	var $export = function(type, name, source){
 	  var IS_FORCED = type & $export.F
 	    , IS_GLOBAL = type & $export.G
@@ -150,25 +162,28 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 4 */
+/*!**********************!*\
+  !*** ./src/utils.js ***!
+  \**********************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	// shortcuts
-
+	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 	exports.getValue = exports.matches = exports.isRegExp = exports.isFunction = exports.isString = exports.isVoid = exports.isInteger = exports.isArray = undefined;
-
-	var _isInteger = __webpack_require__(10);
-
+	
+	var _isInteger = __webpack_require__(/*! babel-runtime/core-js/number/is-integer */ 10);
+	
 	var _isInteger2 = _interopRequireDefault(_isInteger);
-
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
+	
 	var isInteger = _isInteger2.default;
 	var isArray = Array.isArray;
-
+	
 	/**
 	 * Tests if a value is void
 	 * @param {*} value - A value to test
@@ -177,7 +192,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	function isVoid(value) {
 	  return value === undefined || value === null;
 	}
-
+	
 	/**
 	 * Tests if a value is a String
 	 * @param {*} value - A value to test
@@ -186,7 +201,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	function isString(value) {
 	  return typeof value === 'string';
 	}
-
+	
 	/**
 	 * Tests if a value is a Function
 	 * @param {*} value - A value to test
@@ -195,7 +210,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	function isFunction(value) {
 	  return value instanceof Function;
 	}
-
+	
 	/**
 	 * Tests if a value is a RegExp
 	 * @param {*} value - A value to test
@@ -204,7 +219,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	function isRegExp(value) {
 	  return value instanceof RegExp;
 	}
-
+	
 	/**
 	 * Tests if a value matches against matcher(s)
 	 * @param {*} value - A value to test
@@ -229,7 +244,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	  return value === matcher;
 	}
-
+	
 	/**
 	 * Gets an object's key value
 	 * @param {Object} obj - An object
@@ -239,7 +254,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	function getValue(obj, key) {
 	  return isVoid(obj) ? undefined : obj[key];
 	}
-
+	
 	exports.isArray = isArray;
 	exports.isInteger = isInteger;
 	exports.isVoid = isVoid;
@@ -251,6 +266,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 5 */
+/*!**********************************************!*\
+  !*** ./~/core-js/library/modules/$.fails.js ***!
+  \**********************************************/
 /***/ function(module, exports) {
 
 	module.exports = function(exec){
@@ -263,34 +281,40 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 6 */
+/*!**************************************************!*\
+  !*** ./~/core-js/library/modules/$.to-object.js ***!
+  \**************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	// 7.1.13 ToObject(argument)
-	var defined = __webpack_require__(19);
+	var defined = __webpack_require__(/*! ./$.defined */ 19);
 	module.exports = function(it){
 	  return Object(defined(it));
 	};
 
 /***/ },
 /* 7 */
+/*!**************************!*\
+  !*** ./src/PropTypes.js ***!
+  \**************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-
+	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 	exports.addPropTypes = exports.Options = exports.Custom = undefined;
-
-	var _react = __webpack_require__(30);
-
-	var _keys = __webpack_require__(2);
-
+	
+	var _react = __webpack_require__(/*! react */ 30);
+	
+	var _keys = __webpack_require__(/*! ./keys */ 2);
+	
 	var CustomShape = {};
 	var Custom = _react.PropTypes.shape(CustomShape);
 	// children can be an array or an object of custom props
 	CustomShape[_keys.childrenKey] = _react.PropTypes.oneOfType([_react.PropTypes.arrayOf(Custom), _react.PropTypes.objectOf(Custom)]);
-
+	
 	var MatcherPropTypes = [_react.PropTypes.func, _react.PropTypes.instanceOf(RegExp), _react.PropTypes.number, _react.PropTypes.string];
 	var Matcher = _react.PropTypes.oneOfType(MatcherPropTypes);
 	MatcherPropTypes.push(_react.PropTypes.arrayOf(Matcher));
@@ -299,7 +323,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  raw: Matcher,
 	  bind: _react.PropTypes.object
 	});
-
+	
 	/**
 	 * Adds the Custom and Options PropTypes to a React component
 	 * @param {Function} component - A React component
@@ -311,28 +335,31 @@ return /******/ (function(modules) { // webpackBootstrap
 	  component.propTypes[_keys.customKey] = Custom;
 	  component.propTypes[_keys.optionsKey] = Options;
 	}
-
+	
 	exports.Custom = Custom;
 	exports.Options = Options;
 	exports.addPropTypes = addPropTypes;
 
 /***/ },
 /* 8 */
+/*!**************************!*\
+  !*** ./src/childPath.js ***!
+  \**************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-
+	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 	exports.getCustomAt = exports.getChildAt = exports.getChild = exports.toChildren = undefined;
-
-	var _utils = __webpack_require__(4);
-
-	var _keys = __webpack_require__(2);
-
+	
+	var _utils = __webpack_require__(/*! ./utils */ 4);
+	
+	var _keys = __webpack_require__(/*! ./keys */ 2);
+	
 	var pathSeparator = '.';
-
+	
 	/**
 	 * Gets a custom props child (index of children key)
 	 * @param {Object} custom - A custom props object
@@ -343,7 +370,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // get the custom children and return its child
 	  return (0, _utils.getValue)((0, _utils.getValue)(custom, _keys.childrenKey), child);
 	}
-
+	
 	/**
 	 * Converts a child path to children array
 	 * @param {Number|String|Array} childPath - A childPath to convert
@@ -366,7 +393,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	  throw new TypeError('Invalid `childPath` arguments type');
 	}
-
+	
 	/**
 	 * Gets a custom props child (index of children key) at a given child path
 	 * @param {Object} custom - A custom props object
@@ -380,7 +407,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 	  return props;
 	}
-
+	
 	/**
 	 * Gets a custom props at a given child path
 	 * @param {Object} props - A props object
@@ -391,7 +418,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // get the custom props and return its child from the child path
 	  return getChildAt((0, _utils.getValue)(props, _keys.customKey), childPath);
 	}
-
+	
 	exports.toChildren = toChildren;
 	exports.getChild = getChild;
 	exports.getChildAt = getChildAt;
@@ -399,37 +426,40 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 9 */
+/*!***********************!*\
+  !*** ./src/custom.js ***!
+  \***********************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-
+	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 	exports.custom = exports.createResolver = exports.matchesCall = exports.getOptions = exports.defaults = undefined;
-
-	var _keys = __webpack_require__(12);
-
+	
+	var _keys = __webpack_require__(/*! babel-runtime/core-js/object/keys */ 12);
+	
 	var _keys2 = _interopRequireDefault(_keys);
-
-	var _assign = __webpack_require__(11);
-
+	
+	var _assign = __webpack_require__(/*! babel-runtime/core-js/object/assign */ 11);
+	
 	var _assign2 = _interopRequireDefault(_assign);
-
-	var _utils = __webpack_require__(4);
-
-	var _childPath = __webpack_require__(8);
-
-	var _keys3 = __webpack_require__(2);
-
+	
+	var _utils = __webpack_require__(/*! ./utils */ 4);
+	
+	var _childPath = __webpack_require__(/*! ./childPath */ 8);
+	
+	var _keys3 = __webpack_require__(/*! ./keys */ 2);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
+	
 	var defaults = {
 	  ignore: null,
 	  raw: /^on\w/,
 	  bind: null
 	};
-
+	
 	/**
 	 * Gets a custom props options with defaults
 	 * @param {Object} props - A props object
@@ -439,7 +469,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // merge defaults and props options key value
 	  return (0, _assign2.default)({}, defaults, (0, _utils.getValue)(props, _keys3.optionsKey));
 	}
-
+	
 	/**
 	 * Tests if a key/value matches a call (Function and not raw)
 	 * @param {*} key - A key to test against raw matcher
@@ -450,7 +480,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	function matchesCall(key, value, raw) {
 	  return (0, _utils.matches)(value, _utils.isFunction) && !(0, _utils.matches)(key, raw);
 	}
-
+	
 	/**
 	 * Creates a resolver function that eval a given custom props
 	 * @param {Object} custom - A custom props object
@@ -461,12 +491,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var ignore = _ref.ignore;
 	  var raw = _ref.raw;
 	  var bind = _ref.bind;
-
+	
 	  return function resolver() {
 	    if ((0, _utils.isVoid)(custom)) {
 	      return undefined;
 	    }
-
+	
 	    var args = arguments;
 	    var resolved = {};
 	    (0, _keys2.default)(custom).forEach(function (key) {
@@ -474,7 +504,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      if ((0, _utils.matches)(key, ignore)) {
 	        return;
 	      }
-
+	
 	      var value = custom[key];
 	      // apply with arguments if matches call, assign otherwise
 	      resolved[key] = matchesCall(key, value, raw) ? value.apply(bind, args) : value;
@@ -482,7 +512,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return resolved;
 	  };
 	}
-
+	
 	/**
 	 * Creates a resolver for a props at a given child path
 	 * @param {Object} props - A props object
@@ -493,19 +523,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	  for (var _len = arguments.length, childPath = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
 	    childPath[_key - 1] = arguments[_key];
 	  }
-
+	
 	  // get the unique child path if so
 	  if (childPath.length === 1 && (0, _utils.isArray)(childPath[0])) {
 	    childPath = childPath[0];
 	  }
-
+	
 	  var custom = (0, _childPath.getCustomAt)(props, childPath);
 	  var options = getOptions(props);
-
+	
 	  // return the resolver
 	  return createResolver(custom, options);
 	}
-
+	
 	exports.defaults = defaults;
 	exports.getOptions = getOptions;
 	exports.matchesCall = matchesCall;
@@ -514,45 +544,66 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 10 */
+/*!******************************************************!*\
+  !*** ./~/babel-runtime/core-js/number/is-integer.js ***!
+  \******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(13), __esModule: true };
+	module.exports = { "default": __webpack_require__(/*! core-js/library/fn/number/is-integer */ 13), __esModule: true };
 
 /***/ },
 /* 11 */
+/*!**************************************************!*\
+  !*** ./~/babel-runtime/core-js/object/assign.js ***!
+  \**************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(14), __esModule: true };
+	module.exports = { "default": __webpack_require__(/*! core-js/library/fn/object/assign */ 14), __esModule: true };
 
 /***/ },
 /* 12 */
+/*!************************************************!*\
+  !*** ./~/babel-runtime/core-js/object/keys.js ***!
+  \************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(15), __esModule: true };
+	module.exports = { "default": __webpack_require__(/*! core-js/library/fn/object/keys */ 15), __esModule: true };
 
 /***/ },
 /* 13 */
+/*!***************************************************!*\
+  !*** ./~/core-js/library/fn/number/is-integer.js ***!
+  \***************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(27);
-	module.exports = __webpack_require__(1).Number.isInteger;
+	__webpack_require__(/*! ../../modules/es6.number.is-integer */ 27);
+	module.exports = __webpack_require__(/*! ../../modules/$.core */ 1).Number.isInteger;
 
 /***/ },
 /* 14 */
+/*!***********************************************!*\
+  !*** ./~/core-js/library/fn/object/assign.js ***!
+  \***********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(28);
-	module.exports = __webpack_require__(1).Object.assign;
+	__webpack_require__(/*! ../../modules/es6.object.assign */ 28);
+	module.exports = __webpack_require__(/*! ../../modules/$.core */ 1).Object.assign;
 
 /***/ },
 /* 15 */
+/*!*********************************************!*\
+  !*** ./~/core-js/library/fn/object/keys.js ***!
+  \*********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(29);
-	module.exports = __webpack_require__(1).Object.keys;
+	__webpack_require__(/*! ../../modules/es6.object.keys */ 29);
+	module.exports = __webpack_require__(/*! ../../modules/$.core */ 1).Object.keys;
 
 /***/ },
 /* 16 */
+/*!***************************************************!*\
+  !*** ./~/core-js/library/modules/$.a-function.js ***!
+  \***************************************************/
 /***/ function(module, exports) {
 
 	module.exports = function(it){
@@ -562,20 +613,26 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 17 */
+/*!********************************************!*\
+  !*** ./~/core-js/library/modules/$.cof.js ***!
+  \********************************************/
 /***/ function(module, exports) {
 
 	var toString = {}.toString;
-
+	
 	module.exports = function(it){
 	  return toString.call(it).slice(8, -1);
 	};
 
 /***/ },
 /* 18 */
+/*!********************************************!*\
+  !*** ./~/core-js/library/modules/$.ctx.js ***!
+  \********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	// optional / simple context binding
-	var aFunction = __webpack_require__(16);
+	var aFunction = __webpack_require__(/*! ./$.a-function */ 16);
 	module.exports = function(fn, that, length){
 	  aFunction(fn);
 	  if(that === undefined)return fn;
@@ -597,6 +654,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 19 */
+/*!************************************************!*\
+  !*** ./~/core-js/library/modules/$.defined.js ***!
+  \************************************************/
 /***/ function(module, exports) {
 
 	// 7.2.1 RequireObjectCoercible(argument)
@@ -607,6 +667,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 20 */
+/*!***********************************************!*\
+  !*** ./~/core-js/library/modules/$.global.js ***!
+  \***********************************************/
 /***/ function(module, exports) {
 
 	// https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
@@ -616,20 +679,26 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 21 */
+/*!************************************************!*\
+  !*** ./~/core-js/library/modules/$.iobject.js ***!
+  \************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	// fallback for non-array-like ES3 and non-enumerable old V8 strings
-	var cof = __webpack_require__(17);
+	var cof = __webpack_require__(/*! ./$.cof */ 17);
 	module.exports = Object('z').propertyIsEnumerable(0) ? Object : function(it){
 	  return cof(it) == 'String' ? it.split('') : Object(it);
 	};
 
 /***/ },
 /* 22 */
+/*!***************************************************!*\
+  !*** ./~/core-js/library/modules/$.is-integer.js ***!
+  \***************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	// 20.1.2.3 Number.isInteger(number)
-	var isObject = __webpack_require__(23)
+	var isObject = __webpack_require__(/*! ./$.is-object */ 23)
 	  , floor    = Math.floor;
 	module.exports = function isInteger(it){
 	  return !isObject(it) && isFinite(it) && floor(it) === it;
@@ -637,6 +706,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 23 */
+/*!**************************************************!*\
+  !*** ./~/core-js/library/modules/$.is-object.js ***!
+  \**************************************************/
 /***/ function(module, exports) {
 
 	module.exports = function(it){
@@ -645,6 +717,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 24 */
+/*!****************************************!*\
+  !*** ./~/core-js/library/modules/$.js ***!
+  \****************************************/
 /***/ function(module, exports) {
 
 	var $Object = Object;
@@ -663,15 +738,18 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 25 */
+/*!******************************************************!*\
+  !*** ./~/core-js/library/modules/$.object-assign.js ***!
+  \******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	// 19.1.2.1 Object.assign(target, source, ...)
-	var $        = __webpack_require__(24)
-	  , toObject = __webpack_require__(6)
-	  , IObject  = __webpack_require__(21);
-
+	var $        = __webpack_require__(/*! ./$ */ 24)
+	  , toObject = __webpack_require__(/*! ./$.to-object */ 6)
+	  , IObject  = __webpack_require__(/*! ./$.iobject */ 21);
+	
 	// should work with symbols and should have deterministic property order (V8 bug)
-	module.exports = __webpack_require__(5)(function(){
+	module.exports = __webpack_require__(/*! ./$.fails */ 5)(function(){
 	  var a = Object.assign
 	    , A = {}
 	    , B = {}
@@ -701,12 +779,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 26 */
+/*!***************************************************!*\
+  !*** ./~/core-js/library/modules/$.object-sap.js ***!
+  \***************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	// most Object methods by ES6 should accept primitives
-	var $export = __webpack_require__(3)
-	  , core    = __webpack_require__(1)
-	  , fails   = __webpack_require__(5);
+	var $export = __webpack_require__(/*! ./$.export */ 3)
+	  , core    = __webpack_require__(/*! ./$.core */ 1)
+	  , fails   = __webpack_require__(/*! ./$.fails */ 5);
 	module.exports = function(KEY, exec){
 	  var fn  = (core.Object || {})[KEY] || Object[KEY]
 	    , exp = {};
@@ -716,30 +797,39 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 27 */
+/*!************************************************************!*\
+  !*** ./~/core-js/library/modules/es6.number.is-integer.js ***!
+  \************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	// 20.1.2.3 Number.isInteger(number)
-	var $export = __webpack_require__(3);
-
-	$export($export.S, 'Number', {isInteger: __webpack_require__(22)});
+	var $export = __webpack_require__(/*! ./$.export */ 3);
+	
+	$export($export.S, 'Number', {isInteger: __webpack_require__(/*! ./$.is-integer */ 22)});
 
 /***/ },
 /* 28 */
+/*!********************************************************!*\
+  !*** ./~/core-js/library/modules/es6.object.assign.js ***!
+  \********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	// 19.1.3.1 Object.assign(target, source)
-	var $export = __webpack_require__(3);
-
-	$export($export.S + $export.F, 'Object', {assign: __webpack_require__(25)});
+	var $export = __webpack_require__(/*! ./$.export */ 3);
+	
+	$export($export.S + $export.F, 'Object', {assign: __webpack_require__(/*! ./$.object-assign */ 25)});
 
 /***/ },
 /* 29 */
+/*!******************************************************!*\
+  !*** ./~/core-js/library/modules/es6.object.keys.js ***!
+  \******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	// 19.1.2.14 Object.keys(O)
-	var toObject = __webpack_require__(6);
-
-	__webpack_require__(26)('keys', function($keys){
+	var toObject = __webpack_require__(/*! ./$.to-object */ 6);
+	
+	__webpack_require__(/*! ./$.object-sap */ 26)('keys', function($keys){
 	  return function keys(it){
 	    return $keys(toObject(it));
 	  };
@@ -747,6 +837,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 30 */
+/*!**************************************************************************************!*\
+  !*** external {"root":"React","commonjs":"react","commonjs2":"react","amd":"react"} ***!
+  \**************************************************************************************/
 /***/ function(module, exports) {
 
 	module.exports = __WEBPACK_EXTERNAL_MODULE_30__;
@@ -755,3 +848,4 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ ])
 });
 ;
+//# sourceMappingURL=ReactCustomProps.js.map
