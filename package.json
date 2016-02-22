@@ -2,30 +2,30 @@
   "name": "react-custom-props",
   "version": "1.0.0-alpha.3",
   "description": "Custom configurable props for React or HTML elements",
-  "main": "react-custom-props.js",
+  "main": "./lib",
   "scripts": {
     "clean": "rimraf lib dist coverage",
     "prebuild": "npm run clean && npm run test:src",
     "build:lib": "babel src -d lib",
-    "build:dist": "NODE_ENV=development webpack && NODE_ENV=production MINIFY=true webpack",
+    "build:dist": "NODE_ENV=development webpack -d && NODE_ENV=production webpack -p",
     "build": "npm run build:lib && npm run build:dist",
-    "postbuild": "npm run test:lib && npm run test:dist",
-    "test:src": "NODE_ENV=test mocha --compilers js:babel-core/register ./test/src",
-    "test:lib": "NODE_ENV=test mocha --compilers js:babel-core/register ./test/lib",
-    "test:dist": "NODE_ENV=test mocha ./test/dist",
+    "postbuild": "npm run test+coverage",
+    "test:src": "mocha --compilers js:babel-core/register --recursive ./test/src",
+    "test:lib": "mocha --compilers js:babel-core/register --recursive ./test/lib",
+    "test:dist": "mocha ./test/dist",
     "test": "npm run test:src && npm run test:lib && npm run test:dist",
-    "coverage": "NODE_ENV=test istanbul cover _mocha -- -R spec --compilers js:babel-core/register",
-    "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls"
+    "coverage": "rimraf coverage && istanbul cover _mocha -- -R spec --compilers js:babel-core/register --recursive ./test/src",
+    "test+coverage": "npm run test && npm run coverage",
+    "coverage+coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls"
   },
   "files": [
     "src",
     "lib",
-    "dist",
-    "LICENSE"
+    "dist"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/sylvaindethier/react-custom-props.git"
+    "url": "git+https://github.com/sylvaindethier/react-custom-props.git"
   },
   "keywords": [
     "react-custom-props",
@@ -49,9 +49,6 @@
   "dependencies": {
     "babel-runtime": "^6.5.0"
   },
-  "peerDependencies": {
-    "react": "^0.14.0"
-  },
   "devDependencies": {
     "babel-cli": "^6.5.1",
     "babel-core": "^6.5.2",
@@ -69,5 +66,8 @@
     "mocha": "^2.4.2",
     "rimraf": "^2.5.1",
     "webpack": "^1.12.13"
+  },
+  "peerDependencies": {
+    "react": "^0.14.7"
   }
 }

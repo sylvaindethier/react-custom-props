@@ -4,7 +4,7 @@ import custom, {
   PropTypesCustom, ReactPropTypesCustom,
   PropTypesCustomOptions, ReactPropTypesCustomOptions,
   addPropTypesCustom,
-} from '../../react-custom-props';
+} from '../../lib';
 
 
 describe('lib Module', function() {

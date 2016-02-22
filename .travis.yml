@@ -14,4 +14,4 @@ branches:
 before_script: "npm install react"
 
 # coveralls on success
-after_success: "npm run coveralls"
+after_success: "npm run coverage+coveralls"

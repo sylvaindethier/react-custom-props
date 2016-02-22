@@ -10,7 +10,7 @@ const isPROD = process.env.NODE_ENV === 'production';
 //   process.env.NODE_ENV === 'dev' ||
 //   process.env.NODE_ENV === 'development';
 const isTEST = process.env.NODE_ENV === 'test';
-const isMIN = Boolean(process.env.MINIFY);
+
 
 const plugins = [
   // pass process.env.NODE_ENV
@@ -22,8 +22,8 @@ const plugins = [
   // no errors
   new webpack.NoErrorsPlugin(),
 ];
-if (isPROD) { plugins.push(new webpack.optimize.DedupePlugin()); }
-if (isMIN) {
+if (isPROD) {
+  plugins.push(new webpack.optimize.DedupePlugin());
   plugins.push(new webpack.optimize.UglifyJsPlugin({
     minimize: true,
     // sourceMap: true,
@@ -36,7 +36,7 @@ export default {
     [library]: resolve(srcPath, 'index.js'),
   },
   output: {
-    filename: '[name]' + (isMIN ? '.min' : '') + '.js',
+    filename: '[name]' + (isPROD ? '.min' : '') + '.js',
     path: distPath,
     library,
     libraryTarget: 'umd',

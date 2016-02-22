@@ -1,6 +1,6 @@
 'use strict';
 const expect = require('expect');
-const lib = require('../../react-custom-props');
+const lib = require('../../lib');
 
 describe('lib CommonJS', function() {
   it('should expose a "custom" function', function() {
