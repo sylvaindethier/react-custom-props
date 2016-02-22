@@ -9,5 +9,9 @@ node_js:
 branches:
   only:
     - master
+
+# install peer dependencies before running test
 before_script: "npm install react"
+
+# coveralls on success
 after_success: "npm run coveralls"
