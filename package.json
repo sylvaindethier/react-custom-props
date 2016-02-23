@@ -5,9 +5,9 @@
   "main": "./lib",
   "scripts": {
     "clean": "rimraf lib dist coverage",
-    "prebuild": "npm run clean && npm run test:src",
+    "prebuild": "npm run clean",
     "build:lib": "babel src -d lib",
-    "build:dist": "NODE_ENV=development webpack -d && NODE_ENV=production webpack -p",
+    "build:dist": "NODE_ENV=development webpack && NODE_ENV=production webpack",
     "build": "npm run build:lib && npm run build:dist",
     "postbuild": "npm run test+coverage",
     "test:src": "mocha --compilers js:babel-core/register --recursive ./test/src",
