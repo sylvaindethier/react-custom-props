@@ -11,7 +11,7 @@ branches:
     - master
 
 # install peer dependencies before running test
-before_script: "npm install react"
+before_script: "npm install $(node ./scripts/extraDependencies.js"
 
 # coveralls on success
-after_success: "npm run coverage+coveralls"
+after_success: "npm run coverage"
