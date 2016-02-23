@@ -14,4 +14,4 @@ branches:
 before_script: "npm install $(node ./scripts/extraDependencies.js)"
 
 # coveralls on success
-after_success: "npm run coverage"
+after_success: "npm run coverage; cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
