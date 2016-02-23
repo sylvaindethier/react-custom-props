@@ -1,16 +1,19 @@
 #!/bin/bash -e
 
 ## prevent runing script outside the repo root
-if ! [ -e scripts/release.sh ]; then
-  echo >&2 "Please run scripts/release.sh from the repo root"
+script='scripts/release.sh'
+! [[ -x $script ]] &&
+  echo >&2 "Please run $script from the repo root" &&
   exit 1
-fi
 
 ## run the build
 npm run build
 
+## run nvm test
+./scripts/nvm-test.sh
+
 ## get the current version from package
-current_version=$(node -p "require('./package').version")
+current_version=$(node --print "require('./package').version")
 
 ## read the version update type
 echo "Current version is '$current_version'"
@@ -20,7 +23,7 @@ read update_type
 
 ## update package version (disable git-tag-version, will be done after)
 version=$(npm --no-git-tag-version version $update_type)
-echo "New version is '$version'"
+echo "New version is $version"
 
 ## add and commit unstaged changes
 git add --all
