@@ -15,8 +15,7 @@
     "test:dist": "mocha ./test/dist",
     "test": "npm run test:src && npm run test:lib && npm run test:dist",
     "coverage": "rimraf coverage && istanbul cover _mocha -- -R spec --compilers js:babel-core/register --recursive ./test/src",
-    "test+coverage": "npm run test && npm run coverage",
-    "coverage+coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls"
+    "test+coverage": "npm run test && npm run coverage"
   },
   "files": [
     "src",
